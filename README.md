@@ -95,13 +95,16 @@ php artisan migrate --seed
 php artisan serve
 ```
 
-### 2. Laravel 12 (Backend)
+### 2. Next JS 15 (frontend)
 
 ```bash
 cd frontend
 
 # Install dependency
 npm install
+
+# Setup file env
+cp .env.example .env
 
 # Jalankan development server
 npm run dev

@@ -43,7 +43,13 @@ class AkreditasiController extends Controller
             });
         }
 
-        // ✅ Multi-filtering: strata
+        if ($request->filled('strataFilter')) {
+            $strata = $request->input('strataFilter');
+            $query->whereHas('jurusan.strata', function ($q) use ($strata) {
+                $q->whereIn('nama_strata', $strata);
+            });
+        }
+
         if ($request->filled('selectedStrata')) {
             $strata = $request->input('selectedStrata');
             $query->whereHas('jurusan.strata', function ($q) use ($strata) {
@@ -51,7 +57,6 @@ class AkreditasiController extends Controller
             });
         }
 
-        // ✅ Multi-filtering: fakultas
         if ($request->filled('selectedFakultas')) {
             $fakultas = $request->input('selectedFakultas');
             $query->whereHas('jurusan.fakultas', function ($q) use ($fakultas) {

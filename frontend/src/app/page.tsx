@@ -15,6 +15,8 @@ export default function Home() {
   const [strata, setStrata] = useState([]);
   const [jenisAkreditasi, setJenisAkreditasi] = useState([]);
 
+  const [strataFilter, setStrataFilter] = useState('');
+
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -62,10 +64,14 @@ export default function Home() {
       }
     };
 
+    fetchData();
+  }, [searchFilterFakultas]);
+
+  useEffect(() => {
     const loadData = async () => {
       setIsLoadingData(true);
       try {
-        const res = await fetchAkreditasi({ search, page, pagination, selectedStrata, selectedFakultas });
+        const res = await fetchAkreditasi({ search, page, pagination, selectedStrata, selectedFakultas, strataFilter });
         setData(res.data);
         setTotalPages(res.last_page);
         setTotalData(res.total);
@@ -76,9 +82,8 @@ export default function Home() {
       }
     };
 
-    fetchData();
     loadData();
-  }, [search, page, pagination, selectedStrata, selectedFakultas, searchFilterFakultas]);
+  }, [search, page, pagination, selectedStrata, selectedFakultas, strataFilter]);
 
   return (
     <main className="relative py-8 md:p-8 xl:p-16  xl:py-[97px] px-8 md:px-8 xl:px-26 3xl:px-70">
@@ -88,8 +93,8 @@ export default function Home() {
       </div>
       <StrataFilter
         strata={strata}
-        search={search}
-        setSearch={setSearch}
+        strataFilter={strataFilter}
+        setStrataFilter={setStrataFilter}
         page={page}
         setPage={setPage}
       />
