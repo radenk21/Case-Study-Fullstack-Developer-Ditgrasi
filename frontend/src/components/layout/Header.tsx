@@ -4,7 +4,7 @@ import { HomeIcon, ItemSeparatorIcon } from "../../../public/assets/icons";
 export default function Header() {
     return (
         <header className="w-full overflow-hidden mx-auto relative">
-            <div className="h-[132px] md:h-[129px] lg:h-[218px] xl:h-[400px] relative">
+            <div className="relative min-h-[129px] md:min-h-[132px] lg:min-h-[218px] xl:min-h-[400px]">
                 <Image
                     className="absolute top-0 right-0"
                     src="/assets/images/image-header.png"
@@ -22,7 +22,7 @@ export default function Header() {
                     priority
                 />
                 <div className="absolute w-full top-0 left-0 z-[1] rotate-[180deg] responsive-gradient"></div>
-                <div className="z-10 absolute px-8 md:px-16 2xl:px-[300px] xl:py-[97px] mx-auto">
+                <div className="z-10 absolute px-8 md:px-8 xl:px-26 3xl:px-70 xl:py-[97px]">
                     {/* bread crumb */}
                     <nav className="flex items-center gap-2 py-4 2xl:mb-10 xl:mb-[14px]">
                         <Image src={HomeIcon} alt="Home Icon" width={16} height={16} />
@@ -30,8 +30,8 @@ export default function Header() {
                         <span className="text-white">Home</span>
                     </nav>
                     <div>
-                        <h1 className="text-white md:font-extrabold md:text-[48px] font-bold text-[24px] ">Akreditasi dan Prestasi</h1>
-                        <span className="text-[#43AD35] md:text-[20px] text-[14px]">Universitas Sumatera Utara</span>
+                        <h1 className="text-white lg:font-extrabold lg:text-[48px] font-bold text-[24px] ">Akreditasi dan Prestasi</h1>
+                        <span className="text-[#43AD35] lg:text-[20px] text-[14px]">Universitas Sumatera Utara</span>
                     </div>
                 </div>
             </div>

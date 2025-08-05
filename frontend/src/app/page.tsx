@@ -81,7 +81,7 @@ export default function Home() {
   }, [search, page, pagination, selectedStrata, selectedFakultas, searchFilterFakultas]);
 
   return (
-    <main className="relative px-4 py-8 md:p-8 xl:p-16 xl:px-16 2xl:px-[300px] xl:py-[97px] mx-auto">
+    <main className="relative py-8 md:p-8 xl:p-16  xl:py-[97px] px-8 md:px-8 xl:px-26 3xl:px-70">
       <div className='flex flex-col gap-[16px] md:flex-row md:gap-[64px] md:items-center xl:flex-row xl:gap-[64px] xl:items-center'>
         <h1 className='text-[32px] font-[600] text-[#006937]'>Daftar Akreditasi</h1>
         <p className='text-[16px] font-normal'>Universitas Sumatera Utara terus menjaga dan meningkatkan kualitas pendidikan, dibuktikan dengan akreditasi sebagai bukti komitmen kami untuk memberikan pengalaman akademik dan non akademik terbaik bagi Anda.</p>

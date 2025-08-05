@@ -115,7 +115,7 @@ export default function FilterCard({
                             <div className="flex items-center" key={index}>
                                 <div
                                     className={`w-4 h-4 border border-[#d9d9d9] rounded-sm flex items-center justify-center cursor-pointer transition-colors duration-200
-                              ${selectedFakultas.includes(item.nama_fakultas) ? 'bg-[#006937]' : ''}`}
+                                    ${selectedFakultas.includes(item.nama_fakultas) ? 'bg-[#006937]' : ''}`}
                                     onClick={() => {
                                         toggleFilter(item.nama_fakultas, selectedFakultas, setSelectedFakultas)
                                         setPage(1);
