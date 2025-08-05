@@ -121,7 +121,6 @@ export default function Home() {
             />
           </div>
           {/* search akreditasi end */}
-d
         </div>
         {/* search and filter end */}
 
