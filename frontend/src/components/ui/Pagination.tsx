@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { ArrowLeftIcon, ArrowRightIcon, CaretDownIcon } from '../../../public/assets/icons';
+import { ArrowLeftIcon, ArrowRightIcon, CaretDownIcon, CaretUpIcon } from '../../../public/assets/icons';
 import { useRef, useState } from 'react';
 import { Listbox } from '@headlessui/react'
 
@@ -24,6 +24,8 @@ export default function Pagination({
 }: PaginationProps) {
     const [activeEllipsisIndex, setActiveEllipsisIndex] = useState<number | null>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+    const [openPaginate, setOpenPaginate] = useState(false);
+    const [openPagination, setOpenPagination] = useState(false);
 
     function getPaginationRange(currentPage: number, totalPages: number): (number | string)[] {
         const maxButtons = 7;
@@ -129,14 +131,21 @@ export default function Pagination({
                     <Listbox value={page} onChange={setPage}>
                         <div className="relative">
                             <Listbox.Button
-                                className="bg-white px-3 py-2 text-[#3C434A] rounded-lg shadow-[0_1px_2px_0_rgba(0,0,0,0.10)] focus:outline-none focus:ring-2 focus:ring-[#43AD35]"
+                                className="flex bg-white px-3 py-2 text-[#3C434A] rounded-lg shadow-[0_1px_2px_0_rgba(0,0,0,0.10)] focus:outline-none focus:ring-2 focus:ring-[#43AD35] w-full gap-2 items-center"
                                 onClick={() => {
-                                    setTimeout(() => {
-                                        document.activeElement?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                                    }, 0);
+                                    openPagination ? setOpenPagination(false) : setOpenPagination(true);
                                 }}
                             >
-                                {page} dari {totalPages} halaman
+                                <span>
+                                    {page} dari {totalPages} halaman
+                                </span>
+                                <Image
+                                    src={openPagination ? CaretUpIcon : CaretDownIcon}
+                                    alt={openPagination ? "Caret Up" : "Caret Down"}
+                                    width={16}
+                                    height={16}
+                                />
+
                             </Listbox.Button>
 
                             <Listbox.Options className="absolute mt-1 w-full overflow-auto max-h-[150%] rounded-lg bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.10)] z-50">
@@ -180,14 +189,17 @@ export default function Pagination({
                         <Listbox.Button
                             className="relative w-[80px] cursor-pointer rounded-lg bg-white py-1.5 pl-3 pr-8 text-left shadow-[0_1px_2px_0_rgba(0,0,0,0.10)] focus:outline-none focus:ring-2 focus:ring-[#43AD35] text-sm"
                             onClick={() => {
-                                setTimeout(() => {
-                                    document.activeElement?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                                }, 0);
+                                openPaginate ? setOpenPaginate(false) : setOpenPaginate(true);
                             }}
                         >
                             <span className="block truncate">{pagination}</span>
                             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-                                <Image src={CaretDownIcon} alt="Caret Down" width={16} height={16} />
+                                <Image
+                                    src={openPaginate ? CaretUpIcon : CaretDownIcon}
+                                    alt={openPaginate ? "Caret Up" : "Caret Down"}
+                                    width={16}
+                                    height={16}
+                                />
                             </span>
                         </Listbox.Button>
 
