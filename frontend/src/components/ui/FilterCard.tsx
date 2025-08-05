@@ -94,7 +94,7 @@ export default function FilterCard({
                         </div>
                     </div>
                     {/* search fakultas start */}
-                    <div className="relative w-[285px] md:w-[311px]">
+                    <div className="relative w-full">
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2">
                             <Image src={MagnifyingGlassIcon} alt="Search Icon" width={20} height={20} />
                         </span>
