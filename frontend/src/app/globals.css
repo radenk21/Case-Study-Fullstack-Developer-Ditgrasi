@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+	--background: #ffffff;
+	--foreground: #171717;
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
+}
+
+body {
+	background: #ffffff;
+	color: #1e1e1e;
+	font-family: "Public Sans", sans-serif;
+}
+
+.responsive-gradient {
+	height: 400px;
+	background: linear-gradient(
+		270.7deg,
+		#006535 0.5%,
+		#038a47 37.56%,
+		#43ad35 69.58%,
+		rgba(161, 197, 23, 0) 99.32%
+	);
+}
+
+@media (max-width: 1280px) {
+	.responsive-gradient {
+		background: linear-gradient(
+			270.45deg,
+			#006535 22.02%,
+			#038a47 45.46%,
+			#43ad35 69.67%,
+			rgba(161, 197, 23, 0) 99.53%
+		);
+	}
+}
+@media (max-width: 768px) {
+	.responsive-gradient {
+		height: 250px;
+		background: linear-gradient(
+			269.93deg,
+			#006535 15.94%,
+			#038a47 33.07%,
+			#43ad35 50.77%,
+			rgba(161, 197, 23, 0.25) 72.6%
+		);
+	}
+}
+@media (max-width: 377px) {
+	.responsive-gradient {
+		height: 200px;
+		background: linear-gradient(
+			273.04deg,
+			#006535 58.67%,
+			#038a47 68.65%,
+			rgba(35, 156, 62, 0.5) 87.66%
+		);
+	}
+}
