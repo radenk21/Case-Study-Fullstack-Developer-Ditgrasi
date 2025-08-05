@@ -28,7 +28,7 @@ export default function AkreditasiCard({ item }: { item: AkreditasiItem }) {
             title="Klik untuk download sertifikat"
         >
             <div
-                className="w-full flex flex-col lg:flex-row items-start lg:items-center p-4 gap-4 lg:gap-8 bg-white hover:bg-[#F4F6F7] rounded-lg shadow-[0_1px_3px_0_rgba(0,0,0,0.10)]"
+                className="w-full flex flex-col flex-wrap lg:flex-row items-start lg:items-center p-4 gap-4 lg:gap-8 bg-white hover:bg-[#F4F6F7] rounded-lg shadow-[0_1px_3px_0_rgba(0,0,0,0.10)]"
             >
                 {/* data akreditasi start */}
                 <div className="flex-col gap-4 w-full flex-1 self-stretch grow flex items-start relative">
