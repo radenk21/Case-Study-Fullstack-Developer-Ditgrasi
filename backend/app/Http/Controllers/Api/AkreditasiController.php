@@ -46,7 +46,7 @@ class AkreditasiController extends Controller
         if ($request->filled('strataFilter')) {
             $strata = $request->input('strataFilter');
             $query->whereHas('jurusan.strata', function ($q) use ($strata) {
-                $q->whereIn('nama_strata', $strata);
+                $q->where('nama_strata', $strata);
             });
         }
 
