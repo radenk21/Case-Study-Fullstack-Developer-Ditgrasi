@@ -134,7 +134,7 @@ export default function FilterCard({
                 </div>
                 {/* fakultas filter end*/}
                 <button
-                    className='w-full bg-[#F4F6F7] text-[#F04438] rounded-lg py-2 font-semibold hover:bg-[#C3E6BD] hover:text-[#006937] transition-colors duration-300'
+                    className='w-full bg-[#F4F6F7] text-[#F04438] rounded-lg py-2 sm:mb-0 mb-4 font-semibold hover:bg-[#C3E6BD] hover:text-[#006937] transition-colors duration-300'
                     onClick={() => {
                         setSelectedStrata([]);
                         setSelectedFakultas([]);
